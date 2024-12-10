@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-
 import dev.failsafe.Timeout;
 import io.netty.handler.timeout.TimeoutException;
 
@@ -25,8 +24,7 @@ public class WorkingWithDeselectMethods {
 		wait.pollingEvery(Duration.ofSeconds(2));
 		wait.ignoring(TimeoutException.class);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("select-multiple-native"))));
-		
-	
+
 		Select s = new Select(driver.findElement(By.id("select-multiple-native")));
 		System.out.println(s.getWrappedElement().getText());
 
